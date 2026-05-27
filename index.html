@@ -455,7 +455,7 @@
         /* GRILLA DE PRODUCTOS */
         .grilla-productos {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
             padding-top: 8px;
         }
@@ -770,6 +770,201 @@
             color: #777;
             margin: 0 0 14px 0;
             line-height: 1.8;
+        }
+        .mp-descripcion {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #555;
+            margin: 0 0 18px 0;
+            padding: 14px 16px;
+            background: #f7f7f7;
+            border-left: 3px solid #fe2c55;
+            border-radius: 0 10px 10px 0;
+        }
+        body.modo-oscuro .mp-descripcion { background: #1e1e1e; color: #bbb; border-color: #fe2c55; }
+
+        /* ══ BIOGRAFÍA ══ */
+        .bio-grid {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 0;
+            align-items: start;
+        }
+        @media (max-width: 560px) {
+            .bio-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Columna izquierda — pegada al borde izquierdo sin padding */
+        .bio-col-prensa {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        /* Mini recuadro de anuncio genérico */
+        .bio-anuncio-slot {
+            width: 100%;
+            border-radius: 0 10px 10px 0;
+            border: 2px solid #333;
+            border-left: none;
+            overflow: hidden;
+            position: relative;
+            background: #111;
+            aspect-ratio: 3/4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .bio-anuncio-slot:hover { border-color: #fe2c55; }
+
+        /* Slot vacío */
+        .bio-anuncio-vacio {
+            cursor: default;
+            border-style: dashed;
+            border-color: #2a2a2a;
+        }
+        .bio-anuncio-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #333;
+        }
+
+        /* El slot de La Voz hereda bio-prensa-recuadro pero dentro del slot */
+        .bio-anuncio-slot .bio-prensa-recuadro {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 0;
+        }
+        .bio-anuncio-slot .bio-prensa-recuadro img {
+            width: 100%;
+            height: 100%;
+            aspect-ratio: unset;
+            object-fit: cover;
+        }
+        .bio-anuncio-slot .bio-prensa-placeholder {
+            width: 100%;
+            height: 100%;
+            aspect-ratio: unset;
+        }
+
+        @media (max-width: 560px) {
+            .bio-col-prensa {
+                flex-direction: row;
+                gap: 4px;
+            }
+            .bio-anuncio-slot {
+                flex: 1;
+                border-radius: 0;
+                border-left: 2px solid #333;
+                aspect-ratio: 9/16;
+            }
+            .bio-anuncio-vacio { border-color: #2a2a2a; }
+        }
+
+        /* Columna derecha — texto con padding izquierdo y derecho */
+        .bio-col-texto {
+            padding: 0 20px 0 28px;
+        }
+        @media (max-width: 560px) {
+            .bio-col-texto { padding: 16px 20px 0; }
+        }
+
+        .bio-prensa-link { text-decoration: none; display: block; }
+        .bio-prensa-recuadro {
+            width: 100%;
+            border-radius: 0 14px 14px 0;
+            overflow: hidden;
+            position: relative;
+            border: 2px solid #333;
+            border-left: none;
+            background: #1a1a1a;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+        .bio-prensa-recuadro:hover {
+            transform: translateX(3px);
+            box-shadow: 4px 8px 24px rgba(254,44,85,0.25);
+            border-color: #fe2c55;
+        }
+        .bio-prensa-recuadro img {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            display: block;
+        }
+        .bio-prensa-placeholder {
+            display: none;
+            width: 100%;
+            aspect-ratio: 3/4;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 32px;
+            text-align: center;
+            color: #aaa;
+            background: #1a1a1a;
+        }
+        .bio-prensa-placeholder span { font-size: 13px; line-height: 1.4; }
+        .bio-prensa-badge {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            background: rgba(0,0,0,0.75);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 700;
+            text-align: center;
+            padding: 7px 0;
+            letter-spacing: 0.3px;
+        }
+        @media (max-width: 560px) {
+            .bio-prensa-recuadro {
+                border-radius: 0;
+                border-left: none;
+                border-right: none;
+            }
+            .bio-prensa-recuadro img,
+            .bio-prensa-placeholder { aspect-ratio: 16/9; }
+        }
+
+        .bio-titulo {
+            font-size: 20px;
+            font-weight: 800;
+            margin: 0 0 16px 0;
+            color: inherit;
+            line-height: 1.3;
+        }
+        .bio-parrafo {
+            font-size: 14px;
+            line-height: 1.85;
+            color: inherit;
+            margin: 0 0 12px 0;
+            opacity: 0.9;
+        }
+
+        /* Videos */
+        .bio-video-contenedor {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 16px;
+            overflow: hidden;
+            background: #000;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+            margin-top: 24px;
+        }
+        .bio-video-contenedor iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
         }
         .mp-det-label {
             font-size: 13px;
@@ -1396,7 +1591,7 @@
         }
     </style>
 </head>
-<body>
+<body class="modo-oscuro">
 
     <!-- ══ BOTÓN ABRIR DRAWER ══ -->
     <button class="btn-abrir-drawer" onclick="abrirDrawer()" aria-label="Abrir menú">☰</button>
@@ -1604,17 +1799,103 @@
         <h1 class="seccion-titulo-bloque" style="margin-top:48px;">Conoce A Víctor Morán</h1>
 
         <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin:18px 0 40px 0;">
-            <button onclick="this.classList.toggle('activo')" id="btn-biografia" style="padding:20px 56px;border-radius:35px;border:3px solid #222;background:#222;color:#fff;font-size:20px;font-weight:700;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='#fe2c55';this.style.borderColor='#fe2c55'" onmouseout="this.style.background='#222';this.style.borderColor='#222'">Biografía</button>
+            <button onclick="toggleBiografia()" id="btn-biografia" style="padding:20px 56px;border-radius:35px;border:3px solid #222;background:#222;color:#fff;font-size:20px;font-weight:700;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='#fe2c55';this.style.borderColor='#fe2c55'" onmouseout="this.style.background='#222';this.style.borderColor='#222'">Biografía</button>
             <button id="btn-musica" style="padding:20px 56px;border-radius:35px;border:3px solid #222;background:#fff;color:#222;font-size:20px;font-weight:700;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='#fe2c55';this.style.borderColor='#fe2c55';this.style.color='#fff'" onmouseout="this.style.background='#fff';this.style.borderColor='#222';this.style.color='#222'" onclick="mostrarSeccionMusica()">Música</button>
-            <button onclick="this.classList.toggle('activo')" id="btn-proyectos" style="padding:20px 56px;border-radius:35px;border:3px solid #222;background:#fff;color:#222;font-size:20px;font-weight:700;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='#fe2c55';this.style.borderColor='#fe2c55';this.style.color='#fff'" onmouseout="this.style.background='#fff';this.style.borderColor='#222';this.style.color='#222'">Proyectos</button>
+            <button onclick="mostrarSeccion('proyectos')" id="btn-proyectos" style="padding:20px 56px;border-radius:35px;border:3px solid #222;background:#fff;color:#222;font-size:20px;font-weight:700;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='#fe2c55';this.style.borderColor='#fe2c55';this.style.color='#fff'" onmouseout="this.style.background='#fff';this.style.borderColor='#222';this.style.color='#222'">Proyectos</button>
         </div>
 
+
+        <!-- Zona de Biografía -->
+        <div id="zona-biografia" style="display:none; margin-bottom:40px;">
+
+            <!-- Layout grid: recuadro izq | texto der -->
+            <div class="bio-grid">
+
+                <!-- Columna izquierda: 3 mini recuadros de anuncio apilados -->
+                <div class="bio-col-prensa">
+
+                    <!-- Slot 1: izquierda (más pegado al borde de pantalla) — vacío -->
+                    <div class="bio-anuncio-slot bio-anuncio-vacio">
+                        <span class="bio-anuncio-label">Anuncio</span>
+                    </div>
+
+                    <!-- Slot 2: en medio — vacío -->
+                    <div class="bio-anuncio-slot bio-anuncio-vacio">
+                        <span class="bio-anuncio-label">Anuncio</span>
+                    </div>
+
+                    <!-- Slot 3: derecha (más pegado al texto de la biografía) — La Voz de Michoacán -->
+                    <a href="https://www.lavozdemichoacan.com.mx/entretenimiento/musica/de-morelia-a-los-escenarios-de-el-buki-victor-moran-estrena-nuevo-sencillo/?fbclid=IwY2xjawSC--tleHRuA2FlbQIxMABicmlkETFWd09Edk85dWEzdThTY08wc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHnNPx7zKrFysy3c7KGyd6CAL03CDP81Fp1j0Nx8HsgTHajmJjWcb9btsrBdN_aem_TJ9EbwxQk-SXuwKcKbJBYA"
+                       target="_blank" class="bio-prensa-link bio-anuncio-slot" title="Ver nota en La Voz de Michoacán">
+                        <div class="bio-prensa-recuadro">
+                            <img src="imagenes/victor-prensa1.webp" alt="Nota en La Voz de Michoacán"
+                                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                            <div class="bio-prensa-placeholder">
+                                📰<br><span>La Voz de<br>Michoacán</span>
+                            </div>
+                            <div class="bio-prensa-badge">📰 Prensa</div>
+                        </div>
+                    </a>
+
+                </div>
+
+                <!-- Columna derecha: texto -->
+                <div class="bio-col-texto">
+                    <h2 class="bio-titulo">Víctor Morán: La Voz y las Cuerdas del Orgullo Moreliano</h2>
+                    <p class="bio-parrafo">
+                        Originario de Morelia, Michoacán, Víctor Morán se ha consolidado como uno de los músicos independientes más completos y versátiles de la escena actual en México. Su perfil abarca las facetas de cantautor, productor musical, guitarrista y corista, demostrando una madurez artística que fusiona con maestría géneros como el Pop, Funk, Rock y R&B.
+                    </p>
+                    <p class="bio-parrafo">
+                        Su innegable talento e impecable disciplina técnica lo llevaron en el año 2016 a integrarse formalmente a la prestigiosa orquesta de la leyenda internacional Marco Antonio Solís "El Buki". Desde entonces, Víctor ha recorrido los escenarios más emblemáticos del mundo entero —debutando de manera memorable en el histórico Festival Internacional de la Canción de Viña del Mar—, desempeñándose como guitarrista y corista principal de la agrupación, además de fungir con orgullo como el telonero oficial en múltiples de las giras masivas de la estrella michoacana.
+                    </p>
+                    <p class="bio-parrafo">
+                        Paralelamente a su destacada trayectoria internacional en estadios, Víctor Morán impulsa con firmeza su propuesta solista. Con una discografía independiente que incluye su álbum homónimo de estudio y potentes sencillos distribuidos globalmente, continúa conquistando las plataformas digitales de la mano de un sonido moderno, fresco y con una identidad lírica inconfundible que pone en alto el nombre de su natal Michoacán.
+                    </p>
+                </div>
+
+            </div><!-- /bio-grid -->
+
+            <!-- Videos — ancho completo del contenedor, con padding -->
+            <div style="padding: 0 20px; max-width:900px; margin:0 auto;">
+
+                <!-- Video 1: autoplay con mute -->
+                <div class="bio-video-contenedor">
+                    <iframe id="bio-video-yt"
+                        src="https://www.youtube.com/embed/s-FNlBOmRGU?autoplay=1&mute=1&rel=0&modestbranding=1"
+                        title="Víctor Morán - Video"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <!-- Texto entre videos -->
+                <p class="bio-parrafo" style="margin-top:20px; font-size:13px; color:#888; font-style:italic;">
+                    — Este texto habla en referencia al video de arriba.
+                </p>
+                <p class="bio-parrafo" style="margin-top:8px; font-size:15px;">
+                    El inicio de todo este viaje musical en solitario. Les comparto el videoclip oficial de 'Ironía', el proyecto con el que decidí abrir las puertas de mi propuesta independiente al mundo. Denle play, disfruten la música y acompáñenme desde la raíz de este proyecto. ¡Gracias por estar aquí!
+                </p>
+
+                <!-- Video 2: pausado, solo se reproduce al hacer clic -->
+                <div class="bio-video-contenedor">
+                    <iframe
+                        src="https://www.youtube.com/embed/P8OdCauSjI8?autoplay=0&rel=0&modestbranding=1"
+                        title="Víctor Morán - Video 2"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+            </div>
+
+        </div>
         <div id="seccion-musica" style="display:none;">
         <div class="grilla-productos" id="grilla">
 
             <div class="sin-resultados" id="mensaje-vacio">No hay piezas disponibles en esta categoría con el precio seleccionado.</div>
 
             <div class="producto-card" id="prod-victor-no-me-dejas"
+                 data-descripcion="Mi lanzamiento más reciente y una evolución directa de mi sonido. Esta canción captura esa sensación eléctrica de saber que estás atrapado en la mente de alguien más. La producción en el estudio fluyó de una manera increíble y el videoclip tiene una estética cinematográfica de la que estoy sumamente orgulloso. ¡Vayan a verlo a YouTube!"
                  data-nombre="Víctor Morán - No Me Dejas De Pensar (Video Oficial)"
                  data-imagenes="imagenes/victor-no-me-dejas-cover.webp"
                  data-video-youtube="https://www.youtube.com/embed/qX4WWOdKOLY?autoplay=1"
@@ -1629,52 +1910,107 @@
             </div>
 
             <div class="producto-card" id="prod-virgen1"
-                 data-nombre="Virgen Mini 1"
+                 data-descripcion="Esta canción es una declaración de amor directa y sin filtros. Quise capturar esa etapa donde no puedes sacar a alguien de tu mente y todo lo que te rodea te recuerda a esa persona. Tiene una vibra muy melódica y romántica, ideal para dedicársela a alguien especial."
+                 data-nombre="Víctor Morán, Alberto Goo - Solamente Tú (Video Oficial)"
                  data-imagenes="imagenes/virgendiminuta1.webp"
+                 data-youtube="https://www.youtube.com/watch?v=QS4Ql63rq7o"
                  data-ml="#" data-mp="#" data-temu="#" data-amazon="#" data-tiktok="#"
                  onclick="abrirFichaProducto(this)">
-                <img class="producto-img" src="imagenes/virgendiminuta1.webp" alt="Virgen Diminuta">
+                <img class="producto-img" src="imagenes/virgendiminuta1.webp" alt="Solamente Tú">
                 <div class="producto-info">
-                    <h3 class="producto-titulo">Virgen Mini 1</h3>
-                    <p class="producto-detalles">Tamaño: Mini (5cm)<br>Categoría: Figuras</p>
+                    <h3 class="producto-titulo">Víctor Morán, Alberto Goo - Solamente Tú (Video Oficial)</h3>
+                    <p class="producto-detalles">Música · Video Oficial</p>
                 </div>
                 <div class="producto-card-hint">Toca para ver detalles</div>
             </div>
 
             <div class="producto-card" id="prod-unicornio"
-                 data-nombre="Unicornio"
+                 data-descripcion="A veces las cosas en el amor simplemente no se alinean y nos toca perder. Con &ldquo;Mala Suerte&rdquo; busqué componer un tema con el que cualquiera pudiera identificarse cuando las cosas salen mal, pero poniéndole un ritmo que te haga sentir que, a pesar de todo, la música sana las heridas."
+                 data-nombre="Víctor Morán - Mala Suerte (Video Oficial)"
                  data-imagenes="imagenes/unicornio1.webp"
+                 data-youtube="https://www.youtube.com/watch?v=VVIuqsrHu20"
                  data-ml="#" data-mp="#" data-temu="#" data-amazon="#" data-tiktok="#"
                  onclick="abrirFichaProducto(this)">
-                <img class="producto-img" src="imagenes/unicornio1.webp" alt="Unicornio">
+                <img class="producto-img" src="imagenes/unicornio1.webp" alt="Mala Suerte">
                 <div class="producto-info">
-                    <h3 class="producto-titulo">Unicornio</h3>
-                    <p class="producto-detalles">Tamaño: Chico (6cm)<br>Categoría: Figuras</p>
+                    <h3 class="producto-titulo">Víctor Morán - Mala Suerte (Video Oficial)</h3>
+                    <p class="producto-detalles">Música · Video Oficial</p>
                 </div>
                 <div class="producto-card-hint">Toca para ver detalles</div>
             </div>
 
             <div class="producto-card" id="prod-osito1"
-                 data-nombre="Oso Gordito"
+                 data-descripcion="¡Puro ritmo y energía! Con este tema quería invitar a la gente a olvidarse de los problemas y simplemente dejarse llevar. La mezcla de percusiones y guitarras tiene toda la intención de contagiar buena vibra y llenar la pista. De mis favoritas para tocar en vivo."
+                 data-nombre="Víctor Morán - Baila Niña (Video Oficial)"
+                 data-youtube="https://www.youtube.com/watch?v=730DFA-BdAY"
                  data-imagenes="imagenes/oso-chico1.webp"
                  data-ml="#" data-mp="#" data-temu="#" data-amazon="#" data-tiktok="#"
                  onclick="abrirFichaProducto(this)">
-                <img class="producto-img" src="imagenes/oso-chico1.webp" alt="Oso Gordito Chico">
+                <img class="producto-img" src="imagenes/oso-chico1.webp" alt="Baila Niña">
                 <div class="producto-info">
-                    <h3 class="producto-titulo">Oso Gordito</h3>
-                    <p class="producto-detalles">Tamaño: Chico<br>Categoría: Figuras</p>
+                    <h3 class="producto-titulo">Víctor Morán - Baila Niña (Video Oficial)</h3>
+                    <p class="producto-detalles">Música · Video Oficial</p>
                 </div>
                 <div class="producto-card-hint">Toca para ver detalles</div>
             </div>
 
             <div class="producto-card" id="prod-base-cuadrada"
+                 data-descripcion="Esta letra nació inspirada en la belleza de lo cotidiano y en esos detalles únicos que hacen invaluable a una persona. Musicalmente es una balada pop muy cuidada, donde cada arreglo de guitarra fue pensado para abrazar la voz y transmitir un sentimiento muy puro."
+                 data-nombre="Víctor Morán - Tan Perfecta (Video Oficial)"
+                 data-youtube="https://www.youtube.com/watch?v=msEVeDmOABI"
                  data-imagenes="imagenes/basecuadrada1.webp"
                  data-ml="#" data-mp="#" data-temu="#" data-amazon="#" data-tiktok="#"
                  onclick="abrirFichaProducto(this)">
-                <img class="producto-img" src="imagenes/basecuadrada1.webp" alt="Base Cuadrada">
+                <img class="producto-img" src="imagenes/basecuadrada1.webp" alt="Tan Perfecta">
                 <div class="producto-info">
-                    <h3 class="producto-titulo">Base Cuadrada</h3>
-                    <p class="producto-detalles">Tamaño: Mediano (3cm)<br>Categoría: Bases</p>
+                    <h3 class="producto-titulo">Víctor Morán - Tan Perfecta (Video Oficial)</h3>
+                    <p class="producto-detalles">Música · Video Oficial</p>
+                </div>
+                <div class="producto-card-hint">Toca para ver detalles</div>
+            </div>
+
+            <div class="producto-card" id="prod-imperdibles"
+                 data-descripcion="Un proyecto muy especial. Captura esas memorias y momentos de la vida que quedan grabados para siempre y se vuelven, precisamente, imperdibles. El proceso en el estudio fue muy fluido y logramos ese sonido fresco y moderno que tanto buscábamos."
+                 data-nombre="Imperdibles - Víctor Morán ft. Alex Garma y Luiso Mendez"
+                 data-youtube="https://www.youtube.com/watch?v=WzQXpqGWJ-A"
+                 data-imagenes="imagenes/basecuadrada1.webp"
+                 data-ml="#" data-mp="#" data-temu="#" data-amazon="#" data-tiktok="#"
+                 onclick="abrirFichaProducto(this)">
+                <img class="producto-img" src="imagenes/basecuadrada1.webp" alt="Imperdibles">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Imperdibles - Víctor Morán ft. Alex Garma y Luiso Mendez</h3>
+                    <p class="producto-detalles">Música · Video Oficial</p>
+                </div>
+                <div class="producto-card-hint">Toca para ver detalles</div>
+            </div>
+
+            <div class="producto-card" id="prod-ironia"
+                 data-descripcion="Uno de mis primeros sencillos independientes y una canción fundamental en mi historia. Habla de las vueltas tan extrañas que da la vida; cómo el destino te aleja de donde creías que pertenecerías. Dejarla plasmada en plataformas fue el inicio de un gran viaje."
+                 data-nombre="Víctor Morán - Ironía (en vivo)"
+                 data-youtube="https://www.youtube.com/watch?v=cdPVNGijQ4U"
+                 data-imagenes="imagenes/basecuadrada1.webp"
+                 data-ml="#" data-mp="#" data-temu="#" data-amazon="#" data-tiktok="#"
+                 onclick="abrirFichaProducto(this)">
+                <img class="producto-img" src="imagenes/basecuadrada1.webp" alt="Ironía en vivo">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Víctor Morán - Ironía (en vivo)</h3>
+                    <p class="producto-detalles">Música · En Vivo</p>
+                </div>
+                <div class="producto-card-hint">Toca para ver detalles</div>
+            </div>
+
+            <!-- Marco Antonio Solís - pendiente de link de video -->
+            <div class="producto-card" id="prod-marco-antonio"
+                 data-descripcion="No hay palabras suficientes para describir lo que sentí esa noche. Estar en los coros y la guitarra junto al maestro Marco Antonio Solís, pero sobre todo, cantar ante el público de mi hermosa Morelia, fue un sueño hecho realidad. Ver mi tierra vibrar con tanta música es una experiencia que llevaré marcada en el corazón para siempre."
+                 data-nombre="Marco Antonio Solís + Víctor Morán en Morelia (patada de la suerte)"
+                 data-youtube=""
+                 data-imagenes="imagenes/basecuadrada1.webp"
+                 data-ml="#" data-mp="#" data-temu="#" data-amazon="#" data-tiktok="#"
+                 onclick="abrirFichaProducto(this)">
+                <img class="producto-img" src="imagenes/basecuadrada1.webp" alt="Patada de la Suerte">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Marco Antonio Solís + Víctor Morán en Morelia (patada de la suerte)</h3>
+                    <p class="producto-detalles">Música · En Vivo</p>
                 </div>
                 <div class="producto-card-hint">Toca para ver detalles</div>
             </div>
@@ -1704,33 +2040,9 @@
             <div class="mp-info">
                 <h2 class="mp-nombre" id="mpNombre"></h2>
                 <p class="mp-detalles" id="mpDetalles"></p>
-                <!-- Medidas -->
-                <div class="mp-medidas">
-                    <div class="mp-medida-item">
-                        <span class="mp-medida-label">Alto</span>
-                        <span class="mp-medida-valor" id="mpAlto">—</span>
-                    </div>
-                    <div class="mp-medida-item">
-                        <span class="mp-medida-label">Ancho</span>
-                        <span class="mp-medida-valor" id="mpAncho">—</span>
-                    </div>
-                </div>
-                <div class="mp-precio" id="mpPrecio">
-                    <p class="mp-mayoreo-texto">✨ <em>El precio de Bazar es el precio mínimo de mayoreo,</em> y el mayoreo aplica como una reducción de <strong>1 peso</strong> por 1 docena · <strong>2 pesos</strong> por 2 docenas · <strong>3 pesos</strong> por 3 docenas, etc., hasta llegar al precio mínimo que es el <strong>precio de Bazar</strong>.</p>
-                    <div class="precios-fila" style="margin-top:0;">
-                        <div class="precio-bloque">
-                            <span class="precio-etiqueta">Precio</span>
-                            <span class="precio-valor" id="mpPrecioValor" style="font-size:26px;"></span>
-                        </div>
-                        <div class="precio-bloque precio-bloque-bazar" id="mpPrecioBazarBloque">
-                            <span class="precio-etiqueta-bazar">Precio en Bazar</span>
-                            <span class="precio-bazar-badge" id="mpPrecioBazarValor" style="font-size:18px;"></span>
-                        </div>
-                    </div>
-                </div>
+                <p class="mp-descripcion" id="mpDescripcion"></p>
                 <div class="mp-botones">
-                    <button class="btn-mp-whatsapp" id="btnMpWhatsapp">💬 WhatsApp</button>
-                    <button class="btn-mp-compartir" id="btnMpCompartir">🔗 Compartir producto</button>
+                    <button class="btn-mp-compartir" id="btnMpCompartir" style="width:100%;">🔗 Compartir</button>
                 </div>
             </div>
         </div>
@@ -1912,10 +2224,19 @@
 
         // Recordar preferencia de modo oscuro
         window.addEventListener('DOMContentLoaded', () => {
-            if (localStorage.getItem('modoOscuro') === 'true') {
+            // Modo oscuro predeterminado: activo a menos que el usuario haya elegido explícitamente claro
+            const guardado = localStorage.getItem('modoOscuro');
+            const oscuro = guardado === null ? true : guardado === 'true';
+            if (oscuro) {
                 document.body.classList.add('modo-oscuro');
                 document.getElementById('toggleOscuro').classList.add('activo');
+            } else {
+                document.body.classList.remove('modo-oscuro');
+                document.getElementById('toggleOscuro').classList.remove('activo');
             }
+
+            // Biografía abierta por defecto
+            mostrarSeccion('biografia');
         });
 
         // ═══════════════════════════════════════════════
@@ -1998,10 +2319,49 @@
         //  FICHA DE PRODUCTO
         // ═══════════════════════════════════════════════
         function mostrarSeccionMusica() {
-            const sec = document.getElementById('seccion-musica');
-            if (sec) {
-                sec.style.display = sec.style.display === 'none' ? 'block' : 'none';
+            mostrarSeccion('musica');
+        }
+
+        // Función central que controla qué sección se muestra
+        function mostrarSeccion(cual) {
+            const zona = document.getElementById('zona-biografia');
+            const sec  = document.getElementById('seccion-musica');
+            const btnBio  = document.getElementById('btn-biografia');
+            const btnMus  = document.getElementById('btn-musica');
+            const btnProy = document.getElementById('btn-proyectos');
+
+            // Ocultar todo primero
+            zona.style.display = 'none';
+            sec.style.display  = 'none';
+
+            // Restablecer estilos de los 3 botones
+            [btnBio, btnMus, btnProy].forEach(b => {
+                b.style.background   = '#fff';
+                b.style.borderColor  = '#222';
+                b.style.color        = '#222';
+            });
+            btnBio.style.background = '#fff';
+
+            // Mostrar la sección elegida y marcar su botón activo
+            if (cual === 'biografia') {
+                zona.style.display = 'block';
+                btnBio.style.background  = '#fe2c55';
+                btnBio.style.borderColor = '#fe2c55';
+                btnBio.style.color       = '#fff';
+            } else if (cual === 'musica') {
+                sec.style.display = 'block';
+                btnMus.style.background  = '#fe2c55';
+                btnMus.style.borderColor = '#fe2c55';
+                btnMus.style.color       = '#fff';
+            } else if (cual === 'proyectos') {
+                btnProy.style.background  = '#fe2c55';
+                btnProy.style.borderColor = '#fe2c55';
+                btnProy.style.color       = '#fff';
             }
+        }
+
+        function toggleBiografia() {
+            mostrarSeccion('biografia');
         }
 
         function abrirFichaProducto(card) {
@@ -2024,24 +2384,18 @@
             } else {
                 detallesEl.textContent = detallesRaw;
             }
-            document.getElementById('mpAlto').textContent  = card.dataset.alto  || '—';
-            document.getElementById('mpAncho').textContent = card.dataset.ancho || '—';
 
-            // Precio principal
-            document.getElementById('mpPrecioValor').textContent = card.dataset.precioTexto;
-
-            // Precio en bazar — leído del badge dentro de la card
-            const badgeBazar = card.querySelector('.precio-bazar-badge');
-            const bloquesBazar = document.getElementById('mpPrecioBazarBloque');
-            if (badgeBazar) {
-                document.getElementById('mpPrecioBazarValor').textContent = badgeBazar.textContent;
-                bloquesBazar.style.display = 'flex';
-            } else {
-                bloquesBazar.style.display = 'none';
+            // Descripción larga del producto
+            const descEl = document.getElementById('mpDescripcion');
+            const desc = card.dataset.descripcion || '';
+            if (descEl) {
+                descEl.textContent = desc;
+                descEl.style.display = desc ? 'block' : 'none';
             }
-
-            // Si el producto tiene video de YouTube, mostrarlo en lugar de galería de imágenes
-            const videoYT = card.dataset.videoYoutube;
+            // Si el producto tiene video de YouTube (data-youtube o data-video-youtube), mostrarlo
+            const videoYT = card.dataset.videoYoutube || (card.dataset.youtube
+                ? card.dataset.youtube.replace('watch?v=', 'embed/').replace('youtu.be/', 'www.youtube.com/embed/') + '?autoplay=1'
+                : null);
             if (videoYT) {
                 const track = document.getElementById('mpTrack');
                 const puntitos = document.getElementById('mpPuntitos');
@@ -2061,12 +2415,17 @@
 
             // Conectar botones
             document.getElementById('btnMpCompartir').onclick = () => abrirCompartir(card.id, card.dataset.nombre);
-            document.getElementById('btnMpWhatsapp').onclick  = () => {
-                const texto = encodeURIComponent(`Hola, me interesa el producto: ${card.dataset.nombre} (${card.dataset.precioTexto})`);
-                window.open(`https://wa.me/521XXXXXXXXXX?text=${texto}`, '_blank');
-            };
 
             abrirModal('modalProducto');
+        }
+
+        function toggleBiografia() {
+            const zona = document.getElementById('zona-biografia');
+            const btn  = document.getElementById('btn-biografia');
+            const visible = zona.style.display === 'block';
+            zona.style.display = visible ? 'none' : 'block';
+            btn.style.background  = visible ? '#222' : '#fe2c55';
+            btn.style.borderColor = visible ? '#222' : '#fe2c55';
         }
 
         function onClickOverlayProducto(e) {
@@ -2473,17 +2832,11 @@
     <footer class="footer-principal">
         <div class="footer-contenido">
             <div class="footer-marca">
-                <span class="footer-logo">🏺 Yesos Polo Kukumita</span>
-                <p class="footer-desc">Artesanías en yeso hechas con amor en Morelia, Michoacán.</p>
-            </div>
-            <div class="footer-contacto">
-                <p class="footer-contacto-titulo">Contacto</p>
-                <a href="https://wa.me/521XXXXXXXXXX" target="_blank" class="footer-link-contacto">💬 WhatsApp</a>
-                <a href="mailto:pologuzrod&#64;gmail.com" class="footer-link-contacto">✉️ pologuzrod&#64;gmail&#46;com</a>
+                <p class="footer-desc">Morelia, Michoacán.</p>
             </div>
         </div>
         <div class="footer-copy">
-            <span>© 2025 Yesos Polo Kukumita · Todos los derechos reservados</span>
+            <span>© 2025 · Todos los derechos reservados</span>
         </div>
     </footer>
 
