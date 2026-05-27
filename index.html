@@ -797,74 +797,6 @@
         /* Columna izquierda — pegada al borde izquierdo sin padding */
         .bio-col-prensa {
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        /* Mini recuadro de anuncio genérico */
-        .bio-anuncio-slot {
-            width: 100%;
-            border-radius: 0 10px 10px 0;
-            border: 2px solid #333;
-            border-left: none;
-            overflow: hidden;
-            position: relative;
-            background: #111;
-            aspect-ratio: 3/4;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: border-color 0.2s, box-shadow 0.2s;
-        }
-        .bio-anuncio-slot:hover { border-color: #fe2c55; }
-
-        /* Slot vacío */
-        .bio-anuncio-vacio {
-            cursor: default;
-            border-style: dashed;
-            border-color: #2a2a2a;
-        }
-        .bio-anuncio-label {
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: #333;
-        }
-
-        /* El slot de La Voz hereda bio-prensa-recuadro pero dentro del slot */
-        .bio-anuncio-slot .bio-prensa-recuadro {
-            width: 100%;
-            height: 100%;
-            border: none;
-            border-radius: 0;
-        }
-        .bio-anuncio-slot .bio-prensa-recuadro img {
-            width: 100%;
-            height: 100%;
-            aspect-ratio: unset;
-            object-fit: cover;
-        }
-        .bio-anuncio-slot .bio-prensa-placeholder {
-            width: 100%;
-            height: 100%;
-            aspect-ratio: unset;
-        }
-
-        @media (max-width: 560px) {
-            .bio-col-prensa {
-                flex-direction: row;
-                gap: 4px;
-            }
-            .bio-anuncio-slot {
-                flex: 1;
-                border-radius: 0;
-                border-left: 2px solid #333;
-                aspect-ratio: 9/16;
-            }
-            .bio-anuncio-vacio { border-color: #2a2a2a; }
         }
 
         /* Columna derecha — texto con padding izquierdo y derecho */
@@ -1796,12 +1728,31 @@
             </div>
         </div>
 
-        <h1 class="seccion-titulo-bloque" style="margin-top:48px;">Conoce A Víctor Morán</h1>
+        <!-- Wrapper relativo para poder anclar el botón al borde izquierdo real -->
+        <div style="position:relative;">
 
-        <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin:18px 0 40px 0;">
-            <button onclick="toggleBiografia()" id="btn-biografia" style="padding:20px 56px;border-radius:35px;border:3px solid #222;background:#222;color:#fff;font-size:20px;font-weight:700;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='#fe2c55';this.style.borderColor='#fe2c55'" onmouseout="this.style.background='#222';this.style.borderColor='#222'">Biografía</button>
-            <button id="btn-musica" style="padding:20px 56px;border-radius:35px;border:3px solid #222;background:#fff;color:#222;font-size:20px;font-weight:700;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='#fe2c55';this.style.borderColor='#fe2c55';this.style.color='#fff'" onmouseout="this.style.background='#fff';this.style.borderColor='#222';this.style.color='#222'" onclick="mostrarSeccionMusica()">Música</button>
-            <button onclick="mostrarSeccion('proyectos')" id="btn-proyectos" style="padding:20px 56px;border-radius:35px;border:3px solid #222;background:#fff;color:#222;font-size:20px;font-weight:700;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='#fe2c55';this.style.borderColor='#fe2c55';this.style.color='#fff'" onmouseout="this.style.background='#fff';this.style.borderColor='#222';this.style.color='#222'">Proyectos</button>
+            <!-- Botón La Voz de Michoacán — pegado al borde izquierdo absoluto de la pantalla,
+                 fuera del padding del contenedor, en la zona libre entre el borde y el contenido -->
+            <a href="https://www.lavozdemichoacan.com.mx/entretenimiento/musica/de-morelia-a-los-escenarios-de-el-buki-victor-moran-estrena-nuevo-sencillo/?fbclid=IwY2xjawSC--tleHRuA2FlbQIxMABicmlkETFWd09Edk85dWEzdThTY08wc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHnNPx7zKrFysy3c7KGyd6CAL03CDP81Fp1j0Nx8HsgTHajmJjWcb9btsrBdN_aem_TJ9EbwxQk-SXuwKcKbJBYA"
+               target="_blank" title="Ver nota en La Voz de Michoacán"
+               style="position:absolute; top:0; left:calc(-50vw + 50%); display:flex; flex-direction:column; align-items:center; justify-content:center; width:128px; height:144px; background:#1a0a00; border:1px solid #333; border-radius:0 12px 12px 0; text-decoration:none; overflow:hidden; transition:background 0.2s; z-index:10;"
+               onmouseover="this.style.background='#3d1800'"
+               onmouseout="this.style.background='#1a0a00'">
+                <img src="imagenes/victor-prensa1.webp" alt=""
+                     style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.3;"
+                     onerror="this.remove()">
+                <span style="font-size:36px;position:relative;z-index:1;">📰</span>
+                <span style="font-size:11px;font-weight:800;color:#fff;text-align:center;line-height:1.3;position:relative;z-index:1;letter-spacing:0.3px;margin-top:6px;">La Voz<br>Michoacán</span>
+            </a>
+
+            <h1 class="seccion-titulo-bloque" style="margin-top:48px;">Conoce A Víctor Morán</h1>
+
+            <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin:18px 0 40px 0;">
+                <button onclick="toggleBiografia()" id="btn-biografia" style="padding:20px 56px;border-radius:35px;border:3px solid #222;background:#222;color:#fff;font-size:20px;font-weight:700;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='#fe2c55';this.style.borderColor='#fe2c55'" onmouseout="this.style.background='#222';this.style.borderColor='#222'">Biografía</button>
+                <button id="btn-musica" style="padding:20px 56px;border-radius:35px;border:3px solid #222;background:#fff;color:#222;font-size:20px;font-weight:700;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='#fe2c55';this.style.borderColor='#fe2c55';this.style.color='#fff'" onmouseout="this.style.background='#fff';this.style.borderColor='#222';this.style.color='#222'" onclick="mostrarSeccionMusica()">Música</button>
+                <button onclick="mostrarSeccion('proyectos')" id="btn-proyectos" style="padding:20px 56px;border-radius:35px;border:3px solid #222;background:#fff;color:#222;font-size:20px;font-weight:700;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='#fe2c55';this.style.borderColor='#fe2c55';this.style.color='#fff'" onmouseout="this.style.background='#fff';this.style.borderColor='#222';this.style.color='#222'">Proyectos</button>
+            </div>
+
         </div>
 
 
@@ -1809,51 +1760,19 @@
         <div id="zona-biografia" style="display:none; margin-bottom:40px;">
 
             <!-- Layout grid: recuadro izq | texto der -->
-            <div class="bio-grid">
-
-                <!-- Columna izquierda: 3 mini recuadros de anuncio apilados -->
-                <div class="bio-col-prensa">
-
-                    <!-- Slot 1: izquierda (más pegado al borde de pantalla) — vacío -->
-                    <div class="bio-anuncio-slot bio-anuncio-vacio">
-                        <span class="bio-anuncio-label">Anuncio</span>
-                    </div>
-
-                    <!-- Slot 2: en medio — vacío -->
-                    <div class="bio-anuncio-slot bio-anuncio-vacio">
-                        <span class="bio-anuncio-label">Anuncio</span>
-                    </div>
-
-                    <!-- Slot 3: derecha (más pegado al texto de la biografía) — La Voz de Michoacán -->
-                    <a href="https://www.lavozdemichoacan.com.mx/entretenimiento/musica/de-morelia-a-los-escenarios-de-el-buki-victor-moran-estrena-nuevo-sencillo/?fbclid=IwY2xjawSC--tleHRuA2FlbQIxMABicmlkETFWd09Edk85dWEzdThTY08wc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHnNPx7zKrFysy3c7KGyd6CAL03CDP81Fp1j0Nx8HsgTHajmJjWcb9btsrBdN_aem_TJ9EbwxQk-SXuwKcKbJBYA"
-                       target="_blank" class="bio-prensa-link bio-anuncio-slot" title="Ver nota en La Voz de Michoacán">
-                        <div class="bio-prensa-recuadro">
-                            <img src="imagenes/victor-prensa1.webp" alt="Nota en La Voz de Michoacán"
-                                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                            <div class="bio-prensa-placeholder">
-                                📰<br><span>La Voz de<br>Michoacán</span>
-                            </div>
-                            <div class="bio-prensa-badge">📰 Prensa</div>
-                        </div>
-                    </a>
-
-                </div>
-
-                <!-- Columna derecha: texto -->
-                <div class="bio-col-texto">
-                    <h2 class="bio-titulo">Víctor Morán: La Voz y las Cuerdas del Orgullo Moreliano</h2>
-                    <p class="bio-parrafo">
-                        Originario de Morelia, Michoacán, Víctor Morán se ha consolidado como uno de los músicos independientes más completos y versátiles de la escena actual en México. Su perfil abarca las facetas de cantautor, productor musical, guitarrista y corista, demostrando una madurez artística que fusiona con maestría géneros como el Pop, Funk, Rock y R&B.
-                    </p>
-                    <p class="bio-parrafo">
-                        Su innegable talento e impecable disciplina técnica lo llevaron en el año 2016 a integrarse formalmente a la prestigiosa orquesta de la leyenda internacional Marco Antonio Solís "El Buki". Desde entonces, Víctor ha recorrido los escenarios más emblemáticos del mundo entero —debutando de manera memorable en el histórico Festival Internacional de la Canción de Viña del Mar—, desempeñándose como guitarrista y corista principal de la agrupación, además de fungir con orgullo como el telonero oficial en múltiples de las giras masivas de la estrella michoacana.
-                    </p>
-                    <p class="bio-parrafo">
-                        Paralelamente a su destacada trayectoria internacional en estadios, Víctor Morán impulsa con firmeza su propuesta solista. Con una discografía independiente que incluye su álbum homónimo de estudio y potentes sencillos distribuidos globalmente, continúa conquistando las plataformas digitales de la mano de un sonido moderno, fresco y con una identidad lírica inconfundible que pone en alto el nombre de su natal Michoacán.
-                    </p>
-                </div>
-
-            </div><!-- /bio-grid -->
+            <!-- Texto biográfico -->
+            <div style="padding: 0 20px;">
+                <h2 class="bio-titulo">Víctor Morán: La Voz y las Cuerdas del Orgullo Moreliano</h2>
+                <p class="bio-parrafo">
+                    Originario de Morelia, Michoacán, Víctor Morán se ha consolidado como uno de los músicos independientes más completos y versátiles de la escena actual en México. Su perfil abarca las facetas de cantautor, productor musical, guitarrista y corista, demostrando una madurez artística que fusiona con maestría géneros como el Pop, Funk, Rock y R&B.
+                </p>
+                <p class="bio-parrafo">
+                    Su innegable talento e impecable disciplina técnica lo llevaron en el año 2016 a integrarse formalmente a la prestigiosa orquesta de la leyenda internacional Marco Antonio Solís "El Buki". Desde entonces, Víctor ha recorrido los escenarios más emblemáticos del mundo entero —debutando de manera memorable en el histórico Festival Internacional de la Canción de Viña del Mar—, desempeñándose como guitarrista y corista principal de la agrupación, además de fungir con orgullo como el telonero oficial en múltiples de las giras masivas de la estrella michoacana.
+                </p>
+                <p class="bio-parrafo">
+                    Paralelamente a su destacada trayectoria internacional en estadios, Víctor Morán impulsa con firmeza su propuesta solista. Con una discografía independiente que incluye su álbum homónimo de estudio y potentes sencillos distribuidos globalmente, continúa conquistando las plataformas digitales de la mano de un sonido moderno, fresco y con una identidad lírica inconfundible que pone en alto el nombre de su natal Michoacán.
+                </p>
+            </div>
 
             <!-- Videos — ancho completo del contenedor, con padding -->
             <div style="padding: 0 20px; max-width:900px; margin:0 auto;">
@@ -1869,12 +1788,8 @@
                 </div>
 
                 <!-- Texto entre videos -->
-                <p class="bio-parrafo" style="margin-top:20px; font-size:13px; color:#888; font-style:italic;">
-                    — Este texto habla en referencia al video de arriba.
-                </p>
-                <p class="bio-parrafo" style="margin-top:8px; font-size:15px;">
-                    El inicio de todo este viaje musical en solitario. Les comparto el videoclip oficial de 'Ironía', el proyecto con el que decidí abrir las puertas de mi propuesta independiente al mundo. Denle play, disfruten la música y acompáñenme desde la raíz de este proyecto. ¡Gracias por estar aquí!
-                </p>
+                <p class="bio-parrafo" style="margin-top:20px; font-size:13px; color:#888; font-style:italic;">— Este texto habla en referencia al video de arriba.</p>
+                <p class="bio-parrafo" style="margin-top:8px; font-size:15px;">El inicio de todo este viaje musical en solitario. Les comparto el videoclip oficial de 'Ironía', el proyecto con el que decidí abrir las puertas de mi propuesta independiente al mundo. Denle play, disfruten la música y acompáñenme desde la raíz de este proyecto. ¡Gracias por estar aquí!</p>
 
                 <!-- Video 2: pausado, solo se reproduce al hacer clic -->
                 <div class="bio-video-contenedor">
