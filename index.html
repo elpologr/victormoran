@@ -1522,11 +1522,11 @@
             text-align: center;
         }
 
-        /* Cantautor texto en 2 líneas en móvil */
+        /* Cantautor — igual en móvil y PC */
         @media (max-width: 700px) {
-            #titulo-cantautor { font-size: 13px !important; line-height: 1.4; }
+            #titulo-cantautor { font-size: 15px !important; line-height: 1.4; white-space: nowrap; overflow: visible; }
             #titulo-cantautor .cant-linea1,
-            #titulo-cantautor .cant-linea2 { display: block; }
+            #titulo-cantautor .cant-linea2 { display: inline; }
         }
     
         @media (max-width: 700px) {
@@ -1653,7 +1653,7 @@
     </div>
 
     <div class="banner">
-        <img src="imagenes/victormoran-banner.webp" alt="victormoran-banner">
+        <img src="imagenes/victor-banner.webp" alt="victor-banner">
     </div>
 
     <!-- Banda de redes sociales -->
@@ -1736,21 +1736,7 @@
     <div class="contenedor">
 
         <h2 class="seccion-titulo-bloque" id="titulo-cantautor"><span class="cant-linea1">Cantautor, Productor</span><span class="cant-linea2"> · Guitarrista y Corista</span></h2>
-        <style>
-        @media (max-width: 700px) {
-            #titulo-cantautor {
-                font-size: 14px !important;
-                line-height: 1.3;
-                /* fuerza quiebre solo en 2 líneas lógicas */
-                word-break: break-word;
-            }
-            /* Insertar quiebre visual entre las 2 mitades */
-            #titulo-cantautor::before {
-                content: "Cantautor, Productor";
-                display: block;
-            }
-        }
-        </style>
+
         <p style="text-align:center;font-size:36px;font-weight:700;color:#fff;margin:-4px 0 28px 0;letter-spacing:0.5px;text-shadow:0 2px 8px rgba(0,0,0,0.35);">De Gira Con Marco Antonio Solís</p>
 
         <div style="margin: 20px 0 36px 0;">
@@ -1821,6 +1807,59 @@
                     <iframe
                         src="https://www.youtube.com/embed/P8OdCauSjI8?autoplay=0&rel=0&modestbranding=1"
                         title="Víctor Morán - Video 2"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <!-- Texto después del segundo video -->
+                <p class="bio-parrafo" style="margin-top:20px; font-size:13px; color:#888; font-style:italic;">— Este texto habla en referencia al video de arriba.</p>
+                <p class="bio-parrafo" style="margin-top:8px; font-size:15px;">Este segundo video en el canal es sumamente especial para mí. 'Watch Over You' representa una faceta muy íntima de mi propuesta musical, donde quise explorar matices más profundos tanto en la letra como en la atmósfera de los arreglos. Es una canción que habla sobre el cuidado, la lealtad y el estar ahí para alguien en sus momentos más oscuros. Grabar este material audiovisual requirió una entrega total y un enfoque muy cinematográfico. Los invito a ponerse los audífonos, dejarse llevar por el viaje visual y escribirme en los comentarios qué les transmite. ¡Gracias por seguir acompañándome en cada paso!</p>
+
+                <!-- Video 3 -->
+                <div class="bio-video-contenedor">
+                    <iframe
+                        src="https://www.youtube.com/embed/XHQbizD0Cn0?autoplay=0&rel=0&modestbranding=1"
+                        title="Víctor Morán - Video 3"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <p class="bio-parrafo" style="margin-top:20px; font-size:13px; color:#888; font-style:italic;">— Este texto habla en referencia al video de arriba.</p>
+                <p class="bio-parrafo" style="margin-top:8px; font-size:15px;">¡Llegó el momento de bailar! Con este tercer video, 'Funky Love', quise soltar por completo las amarras y traerles pura buena vibra. Esta canción es un homenaje al groove, al ritmo y a esa energía eléctrica que se siente cuando el amor te pone de buenas. El proceso de producción en el estudio fue una auténtica fiesta: metimos líneas de bajo súper marcadas y unos arreglos de guitarra con todo el 'punch' del funk que tanto me apasiona. El videoclip captura exactamente esa esencia relajada, colorida y divertida. Así que suban el volumen, dejen que el ritmo los mueva y díganme en los comentarios si ya los puso a bailar. ¡Disfrútenlo tanto como yo disfruté creándolo!</p>
+
+                <!-- Video 4 -->
+                <div class="bio-video-contenedor">
+                    <iframe
+                        src="https://www.youtube.com/embed/IfyuQt6dwTk?autoplay=0&rel=0&modestbranding=1"
+                        title="Víctor Morán - Video 4"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <p class="bio-parrafo" style="margin-top:20px; font-size:13px; color:#888; font-style:italic;">— Este texto habla en referencia al video de arriba.</p>
+                <p class="bio-parrafo" style="margin-top:8px; font-size:15px;">Este cuarto video, 'Sin Importar Qué Pase', es una de las canciones más honestas y directas que he escrito. Es un reflejo de esos lazos inquebrantables que creamos en la vida, una promesa de lealtad absoluta hacia las personas que verdaderamente importan, recordándonos que no importa qué tan fuerte sople el viento, siempre habrá un motivo para seguir de pie. Para este material audiovisual, buscamos plasmar una narrativa muy orgánica y cercana, que abrazara la fuerza de la guitarra y la intención de cada palabra. Les comparto este pedazo de mi alma con la esperanza de que lo adopten en sus propias historias. Déjenme en los comentarios qué les pareció y a quién se la dedicarían. ¡Gracias por el apoyo de siempre!</p>
+
+                <!-- Video 5 -->
+                <div class="bio-video-contenedor">
+                    <iframe
+                        src="https://www.youtube.com/embed/qpubt0XgrJk?autoplay=0&rel=0&modestbranding=1"
+                        title="Víctor Morán - Video 5"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <p class="bio-parrafo" style="margin-top:20px; font-size:13px; color:#888; font-style:italic;">— Este texto habla en referencia al video de arriba.</p>
+                <p class="bio-parrafo" style="margin-top:8px; font-size:15px;">Hay una magia completamente honesta que solo se logra capturar cuando estás arriba del escenario, sintiendo la vibración de los instrumentos y la complicidad de los músicos en tiempo real. Después de tantos años de recorrer el mundo entero, pisar estadios emblemáticos como Viña del Mar y aprender al lado de un gigante de la música como el maestro Marco Antonio Solís, uno entiende que la verdadera esencia de un artista se demuestra en el directo, sin filtros ni retoques. 'Ojos Color Miel' es un tema sumamente querido para mí, y quise registrarlo precisamente en este formato de sesión en vivo para DVD para regalarles esa pureza. Es la música fluyendo al momento, con arreglos minuciosos y una entrega total en cada nota. Esta versión tiene toda mi alma y mi experiencia acumulada en los grandes escenarios, pensada para hacerlos sentir como si estuvieran disfrutando en primera fila con nosotros. ¡Disfruten de este viaje en vivo y dejen su comentario de qué les pareció!</p>
+
+                <!-- Video 6 -->
+                <div class="bio-video-contenedor">
+                    <iframe
+                        src="https://www.youtube.com/embed/K-5TF05Ev0U?autoplay=0&rel=0&modestbranding=1"
+                        title="Víctor Morán - Video 6"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen>
                     </iframe>
@@ -1944,13 +1983,89 @@
                  data-descripcion="No hay palabras suficientes para describir lo que sentí esa noche. Estar en los coros y la guitarra junto al maestro Marco Antonio Solís, pero sobre todo, cantar ante el público de mi hermosa Morelia, fue un sueño hecho realidad. Ver mi tierra vibrar con tanta música es una experiencia que llevaré marcada en el corazón para siempre."
                  data-nombre="Marco Antonio Solís + Víctor Morán en Morelia (patada de la suerte)"
                  data-youtube=""
-                 data-imagenes="imagenes/mrcoyvictor1.webp"
+                 data-imagenes="imagenes/marcoyvictor.webp"
                  data-ml="#" data-mp="#" data-temu="#" data-amazon="#" data-tiktok="#"
                  onclick="abrirFichaProducto(this)">
-                <img class="producto-img" src="imagenes/mrcoyvictor1.webp" alt="Patada de la Suerte">
+                <img class="producto-img" src="imagenes/marcoyvictor.webp" alt="Patada de la Suerte">
                 <div class="producto-info">
                     <h3 class="producto-titulo">Marco Antonio Solís + Víctor Morán en Morelia (patada de la suerte)</h3>
                     <p class="producto-detalles">Música · En Vivo</p>
+                </div>
+                <div class="producto-card-hint">Toca para ver detalles</div>
+            </div>
+
+
+            <div class="producto-card" id="prod-mil-tragos"
+                 data-descripcion="Una canción llena de energía y sentimiento. 'Mil Tragos' es una de esas piezas que nace del alma y encuentra su camino directo al corazón del público. Denle play y déjense llevar."
+                 data-nombre="Víctor Morán - Mil Tragos (Video Oficial)"
+                 data-youtube="https://www.youtube.com/@V%C3%ADctorMor%C3%A1nOficial/videos"
+                 data-imagenes="imagenes/miltragos.webp"
+                 data-ml="#" data-mp="#" data-temu="#" data-amazon="#" data-tiktok="#"
+                 onclick="abrirFichaProducto(this)">
+                <img class="producto-img" src="imagenes/miltragos.webp" alt="Mil Tragos">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Víctor Morán - Mil Tragos (Video Oficial)</h3>
+                    <p class="producto-detalles">Música · Video Oficial</p>
+                </div>
+                <div class="producto-card-hint">Toca para ver detalles</div>
+            </div>
+
+            <div class="producto-card" id="prod-tengo-que-partir"
+                 data-descripcion="'Tengo Que Partir' es una pieza emotiva que habla de los momentos donde la vida nos pide seguir adelante aunque duela dejar atrás lo que amamos. Una balada cargada de honestidad y vulnerabilidad."
+                 data-nombre="Víctor Morán - Tengo Que Partir (Video Oficial)"
+                 data-youtube="https://www.youtube.com/watch?v=JM4wcV6COC0"
+                 data-imagenes="imagenes/tengoquepartir.webp"
+                 data-ml="#" data-mp="#" data-temu="#" data-amazon="#" data-tiktok="#"
+                 onclick="abrirFichaProducto(this)">
+                <img class="producto-img" src="imagenes/tengoquepartir.webp" alt="Tengo Que Partir">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Víctor Morán - Tengo Que Partir (Video Oficial)</h3>
+                    <p class="producto-detalles">Música · Video Oficial</p>
+                </div>
+                <div class="producto-card-hint">Toca para ver detalles</div>
+            </div>
+
+            <div class="producto-card" id="prod-somebody-cover"
+                 data-descripcion="Una versión muy personal de este clásico de Gotye. Con este cover quise mostrar otra faceta de mi musicalidad y mi amor por reinterpretar canciones que marcaron una generación, dándoles mi propio color y estilo."
+                 data-nombre="Somebody That I Used To Know - Víctor Morán (Cover)"
+                 data-youtube="https://www.youtube.com/watch?v=MZ00MsH59PU"
+                 data-imagenes="imagenes/somebodycover.webp"
+                 data-ml="#" data-mp="#" data-temu="#" data-amazon="#" data-tiktok="#"
+                 onclick="abrirFichaProducto(this)">
+                <img class="producto-img" src="imagenes/somebodycover.webp" alt="Somebody That I Used To Know">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Somebody That I Used To Know - Víctor Morán (Cover)</h3>
+                    <p class="producto-detalles">Música · Cover</p>
+                </div>
+                <div class="producto-card-hint">Toca para ver detalles</div>
+            </div>
+
+            <div class="producto-card" id="prod-ironia-cuarentena"
+                 data-descripcion="Una versión especial de 'Ironía' grabada durante la cuarentena. Este video representa ese período donde la música fue refugio y medio de conexión con todos ustedes a la distancia. Una versión más íntima y cruda de uno de mis primeros sencillos."
+                 data-nombre="Víctor Morán - Ironía versión Cuarentena"
+                 data-youtube="https://www.youtube.com/watch?v=ZWtI3BxA_zo"
+                 data-imagenes="imagenes/ironiacuarentena.webp"
+                 data-ml="#" data-mp="#" data-temu="#" data-amazon="#" data-tiktok="#"
+                 onclick="abrirFichaProducto(this)">
+                <img class="producto-img" src="imagenes/ironiacuarentena.webp" alt="Ironía versión Cuarentena">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Víctor Morán - Ironía versión Cuarentena</h3>
+                    <p class="producto-detalles">Música · Versión Especial</p>
+                </div>
+                <div class="producto-card-hint">Toca para ver detalles</div>
+            </div>
+
+            <div class="producto-card" id="prod-blow-cover"
+                 data-descripcion="Junto a los Morán Brothers, nos aventuramos a hacer nuestra propia versión del exitazo de Ed Sheeran. Un proyecto familiar lleno de buena vibra, armonías y el sello característico de los Morán. ¡Disfrútenlo!"
+                 data-nombre="Morán Brothers - Blow (Ed Sheeran Cover)"
+                 data-youtube="https://www.youtube.com/watch?v=ktrNu1Izx4c"
+                 data-imagenes="imagenes/blow.webp"
+                 data-ml="#" data-mp="#" data-temu="#" data-amazon="#" data-tiktok="#"
+                 onclick="abrirFichaProducto(this)">
+                <img class="producto-img" src="imagenes/blow.webp" alt="Blow Cover">
+                <div class="producto-info">
+                    <h3 class="producto-titulo">Morán Brothers - Blow (Ed Sheeran Cover)</h3>
+                    <p class="producto-detalles">Música · Cover</p>
                 </div>
                 <div class="producto-card-hint">Toca para ver detalles</div>
             </div>
@@ -2642,7 +2757,9 @@
 
         function aplicarFiltros() {
             paginaActual = 1;
-            const todas = Array.from(document.querySelectorAll('.producto-card'));
+            // Solo operar sobre cards dentro de seccion-musica (no las de proyectos ni las ocultas)
+            const secMusica = document.getElementById('seccion-musica');
+            const todas = Array.from(secMusica ? secMusica.querySelectorAll('.producto-card') : document.querySelectorAll('.producto-card'));
             tarjetasFiltradas = todas;
             todas.forEach(p => p.style.display = 'flex');
             const msgVacio = document.getElementById('mensaje-vacio');
